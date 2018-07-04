@@ -1,14 +1,22 @@
 import React from 'react';
-import { Router, Route, Switch } from 'dva/router';
-import IndexPage from './routes/IndexPage';
+import { Route, Switch,routerRedux  } from 'dva/router'
+import dynamic from 'dva/dynamic' // 路由按需加载
+import MainLayout from "./components/MainLayout";
+const { ConnectedRouter } = routerRedux
+function RouterConfig({ history,app }) {
+  const IndexPage = dynamic({
+    app,
+    component: () => import('./routes/IndexPage')
+  })
 
-function RouterConfig({ history }) {
   return (
-    <Router history={history}>
-      <Switch>
-        <Route path="/" exact component={IndexPage} />
-      </Switch>
-    </Router>
+    <ConnectedRouter  history={history}>
+      <MainLayout>
+        <Switch>
+          <Route path="/" exact component={IndexPage} />
+        </Switch>
+      </MainLayout>
+    </ConnectedRouter >
   );
 }
 
