@@ -6,7 +6,7 @@ export default {
   namespace: 'app',
 
   state: {
-    name:"金箍棒"
+    name:"孙悟空"
   },
 
   subscriptions: {

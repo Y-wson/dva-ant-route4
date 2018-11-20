@@ -1,8 +1,11 @@
+/**
+ * Created by Administrator on 2018/11/20 0020.
+ */
 import React, { Component } from 'react'
-import { Menu, Icon } from 'antd'
+import { Menu} from 'antd'
 import { connect } from 'dva'
 
-import { Link, routerRedux } from 'dva/router'
+import { Link } from 'dva/router'
 
 class HeaderSection extends Component {
   render() {
@@ -13,24 +16,10 @@ class HeaderSection extends Component {
         mode="horizontal"
         theme="dark"
       >
-        <Menu.Item key="/users">
-          <Link to="/users">
-            <Icon type="bars" />Users
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="/">
-          <Link to="/">
-            <Icon type="home" />Home
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="/404">
-          <Link to="/page-you-dont-know">
-            <Icon type="frown-circle" />404
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="/antd">
-          <a href="https://github.com/dvajs/dva">dva</a>
-        </Menu.Item>
+        <Menu.Item key="1"><Link to="/meeting">会议</Link></Menu.Item>
+        <Menu.Item key="2"><Link to="/plan">预案</Link></Menu.Item>
+        <Menu.Item key="3"><Link to="/speak">讲话</Link></Menu.Item>
+        <Menu.Item key="4"><Link to="/call"> 通话</Link></Menu.Item>
       </Menu>
     )
   }
